@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-oxblood text-sand font-body antialiased; }
+:focus-visible { outline: 3px solid #F5B21B; outline-offset: 3px; border-radius: 6px; }
+
+@keyframes land {
+  from { opacity: 0; transform: translateY(28px) rotate(-6deg); }
+  to   { opacity: 1; transform: translateY(0) rotate(-2deg); }
+}
+.board-in { animation: land 0.9s cubic-bezier(.2,.8,.2,1) both; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .board-in { animation: none; transform: rotate(-2deg); }
+}
